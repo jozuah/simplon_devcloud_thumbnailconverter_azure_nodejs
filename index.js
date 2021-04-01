@@ -34,23 +34,16 @@ function send_thumb_mail(my_pic, my_thumb){
         to: 'simplon.devcloud@gmail.com',
         subject: 'Thumbs Up !',
         text: "Nouveau thumbnail dans la bibliothèque Azure",
-        attachments: [{   // utf-8 string as an attachment
+        attachments: [{
             filename: 'original.jpg',
-            //content: 'hello world!'
-            path: my_pic,
-            
+            //chemin d'acces car "local"
+            path: my_pic,           
         },
-        {   // utf-8 string as an attachment
+        {   
             filename: 'thumbnail.jpg',
-            //content: 'hello world!'
-            content: my_thumb,
-            
-        }
-        //{   // binary buffer as an attachment
-        //    filename: 'thumbnail',
-        //    content: new Buffer('hello world!','utf-8')
-        //}
-        ]
+            //contenu car il est créé dans la fonciton
+            content: my_thumb,            
+        }]
     };
 
     mail.sendMail(mailOptions, function(error, info){
