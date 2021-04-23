@@ -21,8 +21,6 @@ Dans le cadre de la formation MS CLOUD de l'école du numérique simplon.co, une
 
 => Azure Storage
 
-
-
 ## Schéma d'intégration de la fonction
 
 La fonction se déclenche quand un fichier est upload sur un dossier situé dans l'espace de stockage. => images/
@@ -32,6 +30,18 @@ une miniature que l'on récupère en sortie et que l'on met dans un autre dossie
 ![container](https://github.com/jozuah/simplon_devcloud_thumbnailconverter_azure_nodejs/blob/master/images/container.png)
 
  
+## Etapes d'installation
+
+1) Log in Azure Portal
+2) Create a new resource gruop
+3) Create a storage account with two containers => images/ and imagesthumbnails/
+4) Create a new Function App
+ => add a function with blob trigger storage and blob storage output
+ => copy converter.js in the code+test section
+6) Install all dependancies on kudu  https://docs.microsoft.com/fr-fr/azure/azure-functions/functions-reference-node?tabs=v2
+ => use the package.json on the repository
+ 
+
 
 ## A propos
 
